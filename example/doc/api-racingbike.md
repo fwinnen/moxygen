@@ -19,20 +19,22 @@ Racing bike class.
 
 [RacingBike](#classtransport_1_1RacingBike) is a special kind of bike which can go much faster on the road, with much less effort (even uphill!). It doesn't make sense to call `RingBell` on a racing bike for they don't have bells.
 
-## Summary
-
- Members                        | Descriptions                                
---------------------------------|---------------------------------------------
-`public virtual void `[`PedalHarder`](#classtransport_1_1RacingBike_1ab557c5727daa07a5001782d5dcd46c5b)`()` | PedalHarder makes you go faster (usually).
-`public virtual void `[`RingBell`](#classtransport_1_1RacingBike_1ad32dc3b06a453fba3e20329842bb318b)`()` | Ring bell on the bike.
-
 ## Members
 
-#### `public virtual void `[`PedalHarder`](#classtransport_1_1RacingBike_1ab557c5727daa07a5001782d5dcd46c5b)`()` {#classtransport_1_1RacingBike_1ab557c5727daa07a5001782d5dcd46c5b}
+| Members |                                              
+|-----------------------------------------------------------------------------|
+|`public virtual void `[`PedalHarder`](#classtransport_1_1RacingBike_1ab557c5727daa07a5001782d5dcd46c5b)`()`<div style="margin-top=4px; margin-left: 16px; font-style=italic;">PedalHarder makes you go faster (usually).</div>|
+|`public virtual void `[`RingBell`](#classtransport_1_1RacingBike_1ad32dc3b06a453fba3e20329842bb318b)`()`<div style="margin-top=4px; margin-left: 16px; font-style=italic;">Ring bell on the bike.</div>|
+
+---
+
+### `public virtual void `[`PedalHarder`](#classtransport_1_1RacingBike_1ab557c5727daa07a5001782d5dcd46c5b)`()` {#classtransport_1_1RacingBike_1ab557c5727daa07a5001782d5dcd46c5b}
 
 PedalHarder makes you go faster (usually).
 
-#### `public virtual void `[`RingBell`](#classtransport_1_1RacingBike_1ad32dc3b06a453fba3e20329842bb318b)`()` {#classtransport_1_1RacingBike_1ad32dc3b06a453fba3e20329842bb318b}
+---
+
+### `public virtual void `[`RingBell`](#classtransport_1_1RacingBike_1ad32dc3b06a453fba3e20329842bb318b)`()` {#classtransport_1_1RacingBike_1ad32dc3b06a453fba3e20329842bb318b}
 
 Ring bell on the bike.
 

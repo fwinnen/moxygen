@@ -236,7 +236,7 @@ module.exports = {
         m = m.concat(['{', member.kind, '} ']);
 
       case 'function':
-        m = m.concat(memberdef.$.prot, ' '); // public, private, ...
+        //m = m.concat(memberdef.$.prot, ' '); // public, private, ...
         if (memberdef.templateparamlist) {
           m.push('template<');
           if (memberdef.templateparamlist.length > 0 && memberdef.templateparamlist.param) {
@@ -258,8 +258,8 @@ module.exports = {
         m = m.concat('(');
         if (memberdef.param) {
           memberdef.param.forEach(function (param, argn) {
-            m = m.concat(argn == 0 ? [] : ',');
-            m = m.concat([toMarkdown(param.type)]);
+            m = m.concat(argn == 0 ? [] : ', ');
+            m = m.concat(['\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;', toMarkdown(param.type)]);
             m = m.concat(param.declname ? [' ', toMarkdown(param.declname)] : []);
           });
         }
@@ -272,7 +272,7 @@ module.exports = {
         break;
 
       case 'variable':
-        m = m.concat(memberdef.$.prot, ' '); // public, private, ...
+        //m = m.concat(memberdef.$.prot, ' '); // public, private, ...
         m = m.concat(memberdef.$.static == 'yes' ? ['static', ' '] : []);
         m = m.concat(memberdef.$.mutable == 'yes' ? ['mutable', ' '] : []);
         m = m.concat(toMarkdown(memberdef.type), ' ');
@@ -309,7 +309,11 @@ module.exports = {
         break;
     }
 
-    member.proto = helpers.inline(m);
+
+    member.proto = helpers.inline(m).replace("< ", "&lt;").replace(" >", "&gt;");
+    member.proto_text = helpers.inline_text(m, markdown.refLink(member.name, member.refid)).replace("< ", "&lt;").replace(" >", "&gt;");
+    member.proto_text_nospace = helpers.inline_text_nospace(m).replace("< ", "&lt;").replace(" >", "&gt;");
+    member.proto_text_only = helpers.inline_text_only(m).replace("< ", "&lt;").replace(" >", "&gt;");
   },
 
   assignToNamespace: function (compound, child) {
@@ -419,7 +423,11 @@ module.exports = {
       }.bind(this));
     }
 
-    compound.proto = helpers.inline([compound.kind, ' ', markdown.refLink(compound.name, compound.refid)]);
+    var m = [compound.kind, ' ', markdown.refLink(compound.name, compound.refid)];
+    compound.proto = helpers.inline(m);
+    compound.proto_text = helpers.inline_text(m);
+    compound.proto_text_nospace = helpers.inline_text_nospace(m);
+    compound.proto_text_only = helpers.inline_text_only(m);
 
     // kind specific parsing
     switch (compound.kind) {
@@ -482,6 +490,7 @@ module.exports = {
         console.assert(true);
     }
 
+    console.log(compound);
     return;
   },
 

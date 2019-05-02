@@ -1,3 +1,5 @@
+title: {{name}}
+
 # {{kind}} `{{name}}` {{anchor refid}}
 
 {{#if basecompoundref}}
@@ -13,26 +15,31 @@
 
 {{detaileddescription}}
 
-## Summary
-
- Members                        | Descriptions                                
---------------------------------|---------------------------------------------
-{{#each filtered.compounds}}{{cell proto}}        | {{cell summary}}
-{{/each}}{{#each filtered.members}}{{cell proto}} | {{cell summary}}
-{{/each}}
-
 ## Members
 
+| Members |                                              
+|-----------------------------------------------------------------------------|
+{{#each filtered.compounds}}|<code><b>{{cell proto_text_nospace}}</b></code><div style="margin-top=4px; margin-left: 16px; font-style=italic;">{{cell summary}}</div>||
+{{/each}}{{#each filtered.members}}|<code><b>{{cell proto_text_nospace}}</b></code><div style="margin-top=4px; margin-left: 16px; font-style=italic;">{{cell summary}}</div>|
+{{/each}}
+
 {{#each filtered.compounds}}
-#### {{title proto}} {{anchor refid}}
+
+---
+
+### {{title proto}} {{anchor refid}}
 
 {{briefdescription}}
 
 {{detaileddescription}}
+
 {{/each}}
 
 {{#each filtered.members}}
-#### {{title proto}} {{anchor refid}}
+
+---
+
+### <code><b>{{title proto_text}}</b></code> { #{{refid}} data-toc-label='{{proto_text_only}}' }
 
 {{#if enumvalue}}
  Values                         | Descriptions                                

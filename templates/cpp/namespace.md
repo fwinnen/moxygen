@@ -1,22 +1,23 @@
+title: {{name}}
+
 # {{kind}} `{{name}}` {{anchor refid}}
 
 {{briefdescription}}
 
 {{detaileddescription}}
 
-## Summary
-
- Members                        | Descriptions                                
---------------------------------|---------------------------------------------
-{{#each filtered.members}}{{cell proto}}            | {{cell summary}}
-{{/each}}{{#each filtered.compounds}}{{cell proto}} | {{cell summary}}
-{{/each}}
-
-{{#if filtered.members}}
 ## Members
 
+| Members |                                              
+|-----------------------------------------------------------------------------|
+{{#each filtered.members}}|<code><b>{{cell proto_text_nospace}}</b></code><div style="margin-top=4px; margin-left: 16px; font-style=italic;">{{cell summary}}</div>|
+{{/each}}{{#each filtered.compounds}}|<code><b>{{cell proto_text_nospace}}</b></code><div style="margin-top=4px; margin-left: 16px; font-style=italic;">{{cell summary}}</div>|
+{{/each}}
+
 {{#each filtered.members}}
-#### {{title proto}} {{anchor refid}}
+### {{title proto}} {{anchor refid}}
+
+---
 
 {{#if enumvalue}}
  Values                         | Descriptions                                
@@ -30,4 +31,3 @@
 {{detaileddescription}}
 
 {{/each}}
-{{/if}}

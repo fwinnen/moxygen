@@ -46,8 +46,108 @@ module.exports = {
     }
   },
 
+  inline_text: function(code, self_link) {
+    if (Array.isArray(code)) {
+      var refs, s = '', isInline = false;
+      code.forEach(function (e) {
+        refs = e.split(/(\[.*\]\(.*\)|\n|\s{2}\n)/g);
+        refs.forEach(function (f) {
+          if (f.charAt(0) == '[') {
+            // link
+            var link = f.match(/\[(.*)\]\((.*)\)/);
+            if (link) {
+              isInline ? (s += '') && (isInline = false) : null;
+
+              // no self links in headings
+              if (f != self_link) {
+                s += '[' + link[1] + '](' + link[2] + ')';
+              } else
+                s += link[1];
+            }
+          }
+          else if (f == '\n' || f == '  \n') {
+            // line break
+            isInline ? (s += '') && (isInline = false) : null;
+            s += f;
+          }
+          else if (f) {
+            !isInline ? (s += '') && (isInline = true) : null;
+            s += f;
+          }
+        });
+      });
+      return s;
+    }
+    else {
+      return code;
+    }
+  },
+
+  inline_text_nospace: function(code) {
+    if (Array.isArray(code)) {
+      var refs, s = '', isInline = false;
+      code.forEach(function (e) {
+        refs = e.split(/(\[.*\]\(.*\)|\n|\s{2}\n|&nbsp;)/g);
+        refs.forEach(function (f) {
+          if (f.charAt(0) == '[') {
+            // link
+            var link = f.match(/\[(.*)\]\((.*)\)/);
+            if (link) {
+              isInline ? (s += '') && (isInline = false) : null;
+              s += '[' + link[1] + '](' + link[2] + ')';
+            }
+          }
+          else if (f == '\n' || f == '  \n' | f == '&nbsp;') {
+            // line break
+            isInline ? (s += '') && (isInline = false) : null;
+            //s += f;
+          }
+          else if (f) {
+            !isInline ? (s += '') && (isInline = true) : null;
+            s += f;
+          }
+        });
+      });
+      return s;
+    }
+    else {
+      return code;
+    }
+  },
+
+  inline_text_only: function(code) {
+    if (Array.isArray(code)) {
+      var refs, s = '', isInline = false;
+      code.forEach(function (e) {
+        refs = e.split(/(\[.*\]\(.*\)|\n|\s{2}\n|&nbsp;)/g);
+        refs.forEach(function (f) {
+          if (f.charAt(0) == '[') {
+            // link
+            var link = f.match(/\[(.*)\]\((.*)\)/);
+            if (link) {
+              isInline ? (s += '') && (isInline = false) : null;
+              s += link[1];
+            }
+          }
+          else if (f == '\n' || f == '  \n' | f == '&nbsp;') {
+            // line break
+            s;
+          }
+          else if (f) {
+            !isInline ? (s += '') && (isInline = true) : null;
+            s += f;
+          }
+        });
+      });
+      return s;
+    }
+    else {
+      return code;
+    }
+  },
+
   getAnchor: function(name, options) {
-    if (options.anchors) {
+    if (true) {
       return '{#' + name + '}';
     }
     else if (options.htmlAnchors) {

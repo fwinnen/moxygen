@@ -33,6 +33,7 @@ module.exports = {
       members: [
         'define',
         'enum',
+        'public-type', // enums
         // 'enumvalue',
         'func',
         // 'variable',
@@ -43,8 +44,7 @@ module.exports = {
         'protected-func',
         'signal',
         'public-slot',
-        'protected-slot',
-        'public-type'
+        'protected-slot'
       ],
       compounds: [
         'namespace',

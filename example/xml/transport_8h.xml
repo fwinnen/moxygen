@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
   <compounddef id="transport_8h" kind="file" language="C++">
     <compoundname>transport.h</compoundname>
     <includes local="no">transport/bicycle.h</includes>
@@ -12,6 +12,9 @@
       <node id="26">
         <label>transport/mountainbike.h</label>
       </node>
+      <node id="24">
+        <label>transport/bicycle.h</label>
+      </node>
       <node id="23">
         <label>src/transport.h</label>
         <link refid="transport_8h"/>
@@ -22,9 +25,6 @@
         <childnode refid="26" relation="include">
         </childnode>
       </node>
-      <node id="24">
-        <label>transport/bicycle.h</label>
-      </node>
     </incdepgraph>
       <sectiondef kind="define">
       <memberdef kind="define" id="transport_8h_1afbbb18ca59257b9b19eced9dcb7c7973" prot="public" static="no">
@@ -33,7 +33,9 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>The modifier value if pedal power is used.</para><para>This definition exists in the default namespace and is ungrouped. It will <emphasis>not</emphasis> be displayed if the <computeroutput>groups</computeroutput> options is used. </para>        </detaileddescription>
+<para>The modifier value if pedal power is used.</para>
+<para>This definition exists in the default namespace and is ungrouped. It will <emphasis>not</emphasis> be displayed if the <computeroutput>groups</computeroutput> options is used. </para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="src/transport.h" line="47" column="9" bodyfile="src/transport.h" bodystart="47" bodyend="-1"/>
@@ -48,26 +50,31 @@
           <briefdescription>
           </briefdescription>
           <detaileddescription>
-<para>Bycicle type </para>          </detaileddescription>
+<para>Bycicle type </para>
+          </detaileddescription>
         </enumvalue>
         <enumvalue id="transport_8h_1aca1e72535e7f260e54ed8bbf984dade9ac34fdf94888bac1e847f369e76c9d15b" prot="public">
           <name>RacingBike</name>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
-<para>Racing bike type </para>          </detaileddescription>
+<para>Racing bike type </para>
+          </detaileddescription>
         </enumvalue>
         <enumvalue id="transport_8h_1aca1e72535e7f260e54ed8bbf984dade9ac34fdf94888bac1e847f369e76c9d15b" prot="public">
           <name>RacingBike</name>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
-<para>Mountain bike type </para>          </detaileddescription>
+<para>Mountain bike type </para>
+          </detaileddescription>
         </enumvalue>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Enum class for transport types.</para><para>This definition exists in the default namespace and is ungrouped. It will <emphasis>not</emphasis> be displayed if the <computeroutput>groups</computeroutput> options is used. </para>        </detaileddescription>
+<para>Enum class for transport types.</para>
+<para>This definition exists in the default namespace and is ungrouped. It will <emphasis>not</emphasis> be displayed if the <computeroutput>groups</computeroutput> options is used. </para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="src/transport.h" line="35" column="1" bodyfile="src/transport.h" bodystart="35" bodyend="39"/>

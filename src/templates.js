@@ -36,7 +36,7 @@ module.exports = {
   render: function (compound) {
     var template;
 
-    log.verbose('Rendering ' + compound.kind + ' ' + compound.fullname);
+    console.log('Rendering ' + compound.kind + ' ' + compound.fullname);
 
     switch (compound.kind) {
       case 'index':
